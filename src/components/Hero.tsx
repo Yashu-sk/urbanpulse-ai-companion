@@ -3,6 +3,13 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-cityscape.jpg";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -31,11 +38,20 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-elevated">
+          <Button 
+            size="lg" 
+            onClick={() => scrollToSection('metrics')}
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-elevated"
+          >
             Explore Dashboard
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm font-semibold px-8">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            onClick={() => scrollToSection('ai-assistant')}
+            className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm font-semibold px-8"
+          >
             Ask AI Assistant
           </Button>
         </div>

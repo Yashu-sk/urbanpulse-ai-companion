@@ -3,7 +3,7 @@ import MetricCard from "./MetricCard";
 
 const CityMetrics = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="metrics" className="py-20 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">
