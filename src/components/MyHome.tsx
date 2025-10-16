@@ -1,10 +1,13 @@
 import { Home, Activity, Gauge, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 const MyHome = () => {
-  const handleRedirect = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/my-home');
   };
 
   return (
@@ -36,7 +39,7 @@ const MyHome = () => {
             <CardContent>
               <Button 
                 className="w-full" 
-                onClick={() => handleRedirect('https://monitoring.smarthome.example.com')}
+                onClick={handleNavigate}
               >
                 Open Monitoring
               </Button>
@@ -56,7 +59,7 @@ const MyHome = () => {
             <CardContent>
               <Button 
                 className="w-full"
-                onClick={() => handleRedirect('https://control.smarthome.example.com')}
+                onClick={handleNavigate}
               >
                 Open Control Panel
               </Button>
@@ -76,7 +79,7 @@ const MyHome = () => {
             <CardContent>
               <Button 
                 className="w-full"
-                onClick={() => handleRedirect('https://dashboard.smarthome.example.com')}
+                onClick={handleNavigate}
               >
                 Open Dashboard
               </Button>
